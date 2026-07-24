@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { articles } from "../content";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
@@ -19,11 +18,11 @@ export default function BlogPage() {
       />
       <section className="article-archive">
         {articles.map((article, index) => (
-          <Link className="article-row" href={`/blog/${article.slug}`} key={article.slug}>
+          <a className="article-row" href={`/blog/${article.slug}`} key={article.slug}>
             <span>0{index + 1}</span>
             <div><p>{article.category} · {article.readingTime}</p><h2>{article.title}</h2><em>{article.summary}</em></div>
             <time>{article.date}</time>
-          </Link>
+          </a>
         ))}
       </section>
       <SiteFooter />

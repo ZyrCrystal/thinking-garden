@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "../../content";
 import { SiteFooter, SiteHeader } from "../../site-shell";
@@ -34,7 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <hr />
           <p>这篇文章会随着实践继续更新。数字花园里的内容不必假装完成，它可以诚实地保留变化。</p>
         </div>
-        <Link className="back-link" href="/blog">← 返回全部文章</Link>
+        <a className="back-link" href="/blog">← 返回全部文章</a>
       </article>
       <SiteFooter />
     </main>

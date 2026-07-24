@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "../../content";
 import { SiteFooter, SiteHeader } from "../../site-shell";
@@ -34,7 +33,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         </div>
         <div className="next-case">
           <p>继续探索</p>
-          <Link href="/projects">返回全部作品 <span aria-hidden="true">↗</span></Link>
+          <a href="/projects">返回全部作品 <span aria-hidden="true">↗</span></a>
         </div>
       </article>
       <SiteFooter />

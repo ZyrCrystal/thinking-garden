@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { projects } from "../content";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
@@ -19,7 +18,7 @@ export default function ProjectsPage() {
       />
       <section className="archive-grid">
         {projects.map((project) => (
-          <Link className="archive-card" href={`/projects/${project.slug}`} key={project.slug}>
+          <a className="archive-card" href={`/projects/${project.slug}`} key={project.slug}>
             <div className={`project-visual ${project.accent}`}>
               <span className="project-number">{project.number}</span>
               <div className="visual-shape" aria-hidden="true"><i /><i /><i /><i /><i /></div>
@@ -31,7 +30,7 @@ export default function ProjectsPage() {
               <span>{project.summary}</span>
               <b>查看案例 →</b>
             </div>
-          </Link>
+          </a>
         ))}
       </section>
       <SiteFooter />

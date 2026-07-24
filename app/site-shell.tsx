@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const navigation = [
   ["/projects", "作品"],
   ["/blog", "文章"],
@@ -11,12 +9,12 @@ const navigation = [
 export function SiteHeader() {
   return (
     <header className="site-header inner-header">
-      <Link className="brand" href="/" aria-label="Thinking Garden 首页">
+      <a className="brand" href="/" aria-label="Thinking Garden 首页">
         <span className="brand-mark" aria-hidden="true">TG</span>
         <span>Thinking Garden</span>
-      </Link>
+      </a>
       <nav aria-label="主导航">
-        {navigation.map(([href, label]) => <Link href={href} key={href}>{label}</Link>)}
+        {navigation.map(([href, label]) => <a href={href} key={href}>{label}</a>)}
       </nav>
     </header>
   );
@@ -25,10 +23,10 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer>
-      <Link className="brand" href="/">
+      <a className="brand" href="/">
         <span className="brand-mark" aria-hidden="true">TG</span>
         <span>Thinking Garden</span>
-      </Link>
+      </a>
       <p>一个会随时间生长的数字空间。</p>
       <span>© {new Date().getFullYear()}</span>
     </footer>
