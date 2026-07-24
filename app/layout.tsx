@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Thinking Garden · 用思考连接世界",
   description: "一个记录作品、思考与成长的个人数字花园。关于前端、设计、产品与创造。",
-  metadataBase: new URL("https://thinking-garden.example"),
+  metadataBase: new URL("https://thinking-garden.vercel.app"),
   openGraph: {
     title: "用思考连接世界。",
     description: "作品、思考与成长，一个持续生长的数字空间。",

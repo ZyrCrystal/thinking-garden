@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 const projects = [
   {
+    slug: "data-storytelling",
     index: "01",
     type: "Data visualization",
     title: "让复杂数据一眼可读",
@@ -7,6 +10,7 @@ const projects = [
     accent: "chart",
   },
   {
+    slug: "motion-language",
     index: "02",
     type: "Motion study",
     title: "动效不只是装饰",
@@ -14,6 +18,7 @@ const projects = [
     accent: "motion",
   },
   {
+    slug: "product-thinking",
     index: "03",
     type: "Product thinking",
     title: "从问题到体验",
@@ -32,15 +37,16 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Thinking Garden 首页">
+        <Link className="brand" href="/" aria-label="Thinking Garden 首页">
           <span className="brand-mark" aria-hidden="true">TG</span>
           <span>Thinking Garden</span>
-        </a>
+        </Link>
         <nav aria-label="主导航">
-          <a href="#work">作品</a>
-          <a href="#writing">文章</a>
-          <a href="#notes">笔记</a>
-          <a href="#about">关于</a>
+          <Link href="/projects">作品</Link>
+          <Link href="/blog">文章</Link>
+          <Link href="/notes">笔记</Link>
+          <Link href="/inspiration">灵感</Link>
+          <Link href="/about">关于</Link>
         </nav>
       </header>
 
@@ -92,7 +98,7 @@ export default function Home() {
               <div className="project-copy">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <span className="text-link">案例即将上线 <b aria-hidden="true">→</b></span>
+                <Link className="text-link" href={`/projects/${project.slug}`}>查看完整案例 <b aria-hidden="true">→</b></Link>
               </div>
             </article>
           ))}
@@ -105,7 +111,7 @@ export default function Home() {
           <p className="story-meta">产品思考 · 6 min read</p>
           <h2>好的体验，往往发生在用户没有注意到的地方。</h2>
           <p className="story-summary">关于克制、反馈和那些看似微小，却决定产品质感的设计选择。这会是数字花园里的第一篇长文。</p>
-          <span className="outline-action">即将发布 <span aria-hidden="true">↗</span></span>
+          <Link className="outline-action" href="/blog/quiet-experiences">阅读全文 <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="story-poster" aria-hidden="true">
           <div className="poster-window"><span /><span /><span /></div>
@@ -124,6 +130,7 @@ export default function Home() {
             <article key={text}><span>0{index + 1}</span><p>{text}</p><time>{date}</time></article>
           ))}
         </div>
+        <Link className="section-more" href="/notes">查看全部笔记 <span aria-hidden="true">→</span></Link>
       </section>
 
       <section className="about-section" id="about">
@@ -132,7 +139,7 @@ export default function Home() {
           <p className="section-index">04 / ABOUT</p>
           <h2>一个有点较真的创造者。</h2>
           <p>我喜欢把模糊的问题想清楚，再用设计与代码把它做出来。目前专注于数据可视化、动效与 AI 产品体验，也持续收藏那些让我眼前一亮的作品。</p>
-          <a href="mailto:hello@example.com">SAY HELLO <span aria-hidden="true">↗</span></a>
+          <Link href="/about">MORE ABOUT ME <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
